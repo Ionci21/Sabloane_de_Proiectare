@@ -1,32 +1,30 @@
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
 public class Book {
     private final String bookTitle;
-    @SuppressWarnings({"unused", "FieldCanBeLocal"})
-    private Author booksAuthor;
-    private final List<Chapter> listOfChapters;
+    private final List<Author> listOfAuthors;
+    private final List<Element> listOfElements;
 
     public Book(String bookTitle) {
         this.bookTitle = bookTitle;
-        this.listOfChapters = new ArrayList<>();
+        this.listOfAuthors = new ArrayList<>();
+        this.listOfElements = new ArrayList<>();
     }
 
-    @SuppressWarnings("unused")
     public void print() {
-        System.out.println("Book with title: " + bookTitle);
+        System.out.println("Book: " + bookTitle + "\n\nAuthors:");
+        listOfAuthors.forEach(Author::print);
+        System.out.println();
+        listOfElements.forEach(Element::print);
     }
 
     public void addAuthor(Author obiectAutor) {
-        this.booksAuthor = obiectAutor;
+        this.listOfAuthors.add(obiectAutor);
     }
 
-    public int createChapter(String numeleCapitolului) {
-        listOfChapters.add(new Chapter(numeleCapitolului));
-        return listOfChapters.size() - 1;
-    }
-
-    public Chapter getChapter(int indexChapterOne) {
-        return listOfChapters.get(indexChapterOne);
+    public void addContent(Element paragraphObject) {
+        listOfElements.add(paragraphObject);
     }
 }

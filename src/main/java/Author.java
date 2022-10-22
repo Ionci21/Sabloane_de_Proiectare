@@ -7,6 +7,6 @@ public class Author {
 
     @SuppressWarnings("unused")
     public void print() {
-        System.out.println("Author with name: " + authorName);
+        System.out.println("Author: " + authorName);
     }
 }
