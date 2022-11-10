@@ -1,3 +1,5 @@
+package models;
+
 public class Author {
     private final String authorName;
 
@@ -7,6 +9,6 @@ public class Author {
 
     @SuppressWarnings("unused")
     public void print() {
-        System.out.println("Author: " + authorName);
+        System.out.println("models.Author: " + authorName);
     }
 }

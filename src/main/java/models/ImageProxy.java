@@ -1,3 +1,5 @@
+package models;
+
 @SuppressWarnings("unused")
 public class ImageProxy implements Element, Picture {
     private final String proxyImage;
