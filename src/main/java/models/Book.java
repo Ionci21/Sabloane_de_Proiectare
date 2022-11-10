@@ -1,3 +1,5 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +16,7 @@ public class Book {
     }
 
     public void print() {
-        System.out.println("Book: " + bookTitle + "\n\nAuthors:");
+        System.out.println("models.Book: " + bookTitle + "\n\nAuthors:");
         listOfAuthors.forEach(Author::print);
         System.out.println();
         listOfElements.forEach(Element::print);

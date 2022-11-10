@@ -1,3 +1,5 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,6 @@ public class Table implements Element {
     }
 
     public void print() {
-        System.out.println("Table with title: " + numeleTabelei);
+        System.out.println("models.Table with title: " + numeleTabelei);
     }
 }
