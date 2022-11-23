@@ -2,7 +2,7 @@ package test;
 
 public class Main {
     public static void main(String[] args) {
-        Element obiectAn = new An("Informatica 3");
+        An obiectAn = new An("Informatica 3");
         Grupa primaGrupa = new Grupa("Grupa 1");
         Semigrupa primaSemigrupa = new Semigrupa("Semigrupa 1.1");
         primaSemigrupa.add(
@@ -15,6 +15,8 @@ public class Main {
                 new Student("Georgescu E", "georgescu@acme.edu")
         );
         primaGrupa.add(aDouaSemigrupa);
-        obiectAn.add(primaGrupa, new Grupa("Gruoa 2"));
+        obiectAn.add(primaGrupa, new Grupa("Grupa 2"));
+        Visitor printVisitor = new PrintVisitor();
+        obiectAn.accept(printVisitor);
     }
 }

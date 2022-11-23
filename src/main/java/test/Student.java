@@ -1,23 +1,19 @@
 package test;
 
 @SuppressWarnings("unused")
-public class Student implements Element {
-    private final String numePrenumeStudent, emailStudent;
-
-    public Student(String numePrenumeStudent, String emailStudent) {
-        this.numePrenumeStudent = numePrenumeStudent;
-        this.emailStudent = emailStudent;
-    }
-
-    public String getNumePrenumeStudent() {
-        return numePrenumeStudent;
-    }
-
-    public String getEmailStudent() {
-        return emailStudent;
-    }
+public record Student(String numePrenumeStudent, String emailStudent) implements Element {
 
     @Override
     public void add(Element... obiectElement) {
+    }
+
+    @Override
+    public void printElement() {
+        System.out.println("\t\t\t" + numePrenumeStudent + ", " + emailStudent);
+    }
+
+    @Override
+    public void accept(Visitor visitorObject) {
+        visitorObject.visitElement(this);
     }
 }

@@ -20,4 +20,15 @@ public class Semigrupa implements Element {
     public void add(Element... obiectElement) {
         listaElemente.addAll(List.of(obiectElement));
     }
+
+    @Override
+    public void printElement() {
+        System.out.println("\t\t" + titluSemigrupa);
+    }
+
+    @Override
+    public void accept(Visitor visitorObject) {
+        visitorObject.visitElement(this);
+        listaElemente.forEach(elementCurent -> elementCurent.accept(visitorObject));
+    }
 }

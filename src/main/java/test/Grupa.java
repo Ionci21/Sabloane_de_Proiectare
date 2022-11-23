@@ -22,7 +22,18 @@ public class Grupa implements Element {
         listaElemente.addAll(List.of(obiectElement));
     }
 
+    @Override
+    public void printElement() {
+        System.out.println("\t" + titluGrupa);
+    }
+
     public List<Element> getListaElemente() {
         return listaElemente;
+    }
+
+    @Override
+    public void accept(Visitor visitorObject) {
+        visitorObject.visitElement(this);
+        listaElemente.forEach(elementCurent -> elementCurent.accept(visitorObject));
     }
 }
