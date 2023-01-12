@@ -1,8 +1,5 @@
 package models;
 
-import services.AlignCenter;
-import services.AlignLeft;
-import services.AlignRight;
 import services.AlignStrategy;
 
 import java.util.ArrayList;
@@ -36,20 +33,17 @@ public class Paragraph implements Element {
 
     public void print() {
         if (alignStrategy != null) {
-            if (alignStrategy instanceof AlignCenter) {
-                System.out.print("########");
-            }
-            if (alignStrategy instanceof AlignRight) {
-                System.out.print("################");
-            }
-            if (alignStrategy instanceof AlignLeft) {
-                System.out.print("#");
-            }
+            alignStrategy.render(this);
+        } else {
+            System.out.println(paragraphName);
         }
-        System.out.println("Paragraph: " + paragraphName);
     }
 
     public void setAlignStrategy(AlignStrategy alignStrategy) {
         this.alignStrategy = alignStrategy;
+    }
+
+    public String getName() {
+        return paragraphName;
     }
 }
