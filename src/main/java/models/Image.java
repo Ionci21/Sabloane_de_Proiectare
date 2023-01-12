@@ -1,15 +1,18 @@
 package models;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Image implements Element {
-    private final String imageName;
+public class Image implements Element, Picture {
+    private final String url;
+    private final PictureContent pictureContent;
     private final List<Element> listOfElements;
 
-    public Image(String imageName) {
-        this.imageName = imageName;
+    public Image(String url) {
+        this.url = url;
         this.listOfElements = new ArrayList<>();
+        pictureContent = new PictureContent();
     }
 
     @Override
@@ -28,6 +31,21 @@ public class Image implements Element {
     }
 
     public void print() {
-        System.out.println("Image with name: " + imageName);
+        System.out.println("Image with name: " + url);
+    }
+
+    @Override
+    public String url() {
+        return url;
+    }
+
+    @Override
+    public Dimension dim() {
+        return new Dimension();
+    }
+
+    @Override
+    public PictureContent content() {
+        return pictureContent;
     }
 }
