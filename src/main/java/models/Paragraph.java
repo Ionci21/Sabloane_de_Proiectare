@@ -1,5 +1,10 @@
 package models;
 
+import services.AlignCenter;
+import services.AlignLeft;
+import services.AlignRight;
+import services.AlignStrategy;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +46,7 @@ public class Paragraph implements Element {
                 System.out.print("#");
             }
         }
-        System.out.println("models.Paragraph: " + paragraphName);
+        System.out.println("Paragraph: " + paragraphName);
     }
 
     public void setAlignStrategy(AlignStrategy alignStrategy) {

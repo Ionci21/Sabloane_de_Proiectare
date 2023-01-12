@@ -7,8 +7,7 @@ public class Author {
         this.authorName = authorName;
     }
 
-    @SuppressWarnings("unused")
     public void print() {
-        System.out.println("models.Author: " + authorName);
+        System.out.println("Author: " + authorName);
     }
 }

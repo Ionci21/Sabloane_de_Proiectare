@@ -28,6 +28,6 @@ public class Table implements Element {
     }
 
     public void print() {
-        System.out.println("models.Table with title: " + numeleTabelei);
+        System.out.println("Table with title: " + numeleTabelei);
     }
 }

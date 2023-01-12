@@ -3,20 +3,18 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-public class Book {
-    private final String bookTitle;
+public class Book extends Section {
     private final List<Author> listOfAuthors;
     private final List<Element> listOfElements;
 
     public Book(String bookTitle) {
-        this.bookTitle = bookTitle;
+        super(bookTitle);
         this.listOfAuthors = new ArrayList<>();
         this.listOfElements = new ArrayList<>();
     }
 
     public void print() {
-        System.out.println("models.Book: " + bookTitle + "\n\nAuthors:");
+        System.out.println("Book: " + sectionTitle + "\n\nAuthors:");
         listOfAuthors.forEach(Author::print);
         System.out.println();
         listOfElements.forEach(Element::print);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Section implements Element {
-    private final String sectionTitle;
+    protected final String sectionTitle;
     private final List<Element> listOfelements;
 
     public Section(String sectionTitle) {
