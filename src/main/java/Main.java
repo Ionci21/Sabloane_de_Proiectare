@@ -1,4 +1,5 @@
 import models.*;
+import services.DocumentManager;
 import visitor.BookStatistics;
 
 public class Main {
@@ -17,8 +18,16 @@ public class Main {
         cap1.add(new Image("ImageTwo"));
         cap1.add(new Paragraph("Some text"));
         cap1.add(new Table("Table 1"));
+        DocumentManager documentManager = new DocumentManager();
+        documentManager.setBook(new Book("Book"));
+        Printing();
+
         BookStatistics bookStatistics = new BookStatistics();
         cap1.accept(bookStatistics);
         bookStatistics.printStatistics();
+    }
+
+    private static void Printing() {
+        DocumentManager.getInstance().getBook().print();
     }
 }
