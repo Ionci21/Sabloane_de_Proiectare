@@ -1,6 +1,7 @@
 package models;
 
 import services.AlignStrategy;
+import visitor.Visitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,5 +46,11 @@ public class Paragraph implements Element {
 
     public String getName() {
         return paragraphName;
+    }
+
+    @Override
+    public void accept(Visitor visitorObject) {
+        visitorObject.visitParagraph(this);
+        listOfElements.forEach(elementCurent -> elementCurent.accept(visitorObject));
     }
 }

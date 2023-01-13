@@ -1,5 +1,7 @@
 package models;
 
+import visitor.Visitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,5 +31,10 @@ public class Table implements Element {
 
     public void print() {
         System.out.println("Table with title: " + numeleTabelei);
+    }
+
+    @Override
+    public void accept(Visitor visitorObject) {
+        visitorObject.visitTable(this);
     }
 }

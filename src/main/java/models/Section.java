@@ -1,5 +1,7 @@
 package models;
 
+import visitor.Visitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,5 +33,11 @@ public class Section implements Element {
     public void print() {
         System.out.println(sectionTitle);
         listOfelements.forEach(Element::print);
+    }
+
+    @Override
+    public void accept(Visitor visitorObject) {
+        visitorObject.visitSection(this);
+        listOfelements.forEach(elementCurent -> elementCurent.accept(visitorObject));
     }
 }

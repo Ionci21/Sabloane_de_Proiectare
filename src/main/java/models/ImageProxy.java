@@ -1,5 +1,7 @@
 package models;
 
+import visitor.Visitor;
+
 import java.awt.*;
 
 @SuppressWarnings("unused")
@@ -52,5 +54,10 @@ public class ImageProxy implements Element, Picture {
     @Override
     public PictureContent content() {
         return imageObject.content();
+    }
+
+    @Override
+    public void accept(Visitor visitorObject) {
+        visitorObject.visitImageProxy(this);
     }
 }

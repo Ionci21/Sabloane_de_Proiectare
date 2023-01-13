@@ -1,5 +1,7 @@
 package models;
 
+import visitor.Visitee;
+
 import java.util.ArrayList;
 import java.util.List;
 
